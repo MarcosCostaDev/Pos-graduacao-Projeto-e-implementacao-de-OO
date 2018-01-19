@@ -7,9 +7,7 @@ import java.sql.SQLException;
 public class ConnectionFactory {
 
 	private String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";  
-    private String connectionStr = "jdbc:sqlserver://localhost:1433;databaseName=PooProjeto";  
-    private String usuario = "sa";  
-    private String senha = "14112011";  
+    private String connectionStr = "jdbc:sqlserver://NB-MARCOSCOSTA\\SQLEXPRESS;databaseName=pioopublicidade;integratedSecurity=true;";  
       
     private static ConnectionFactory connectionFactory = null;  
 
@@ -24,7 +22,7 @@ public class ConnectionFactory {
     public Connection getConnection() throws SQLException{  
         Connection conn = null;  
         try{  
-        conn = DriverManager.getConnection(connectionStr, usuario, senha);  
+        conn = DriverManager.getConnection(connectionStr);  
         }catch(SQLException e){  
             e.printStackTrace();  
         }  

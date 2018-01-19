@@ -1,5 +1,5 @@
 
-package com.pos.pioo.domain;
+package com.pos.pioo.domain.entidades;
 
 import java.util.Date;
 
@@ -10,6 +10,9 @@ public class Anunciante extends Entidade {
 	private String endereco;
 	private String cidade;
 	private String telefone;
+	
+
+
 	private Date dataCriacao;
 	
 	protected Anunciante()
@@ -32,7 +35,7 @@ public class Anunciante extends Entidade {
 		this.endereco = endereco;
 		this.cidade = cidade;
 		this.telefone = telefone;	
-		this.dataCriacao =new Date();
+		this.setDataCriacao(new Date());
 	}
 	
 	public String getNome() {
@@ -60,5 +63,8 @@ public class Anunciante extends Entidade {
 		return dataCriacao;
 	}
 
+	public void setDataCriacao(Date dataCriacao) {
+		this.dataCriacao = dataCriacao;
+	}
 	
 }

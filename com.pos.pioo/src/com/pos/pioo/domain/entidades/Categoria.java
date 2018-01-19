@@ -1,4 +1,4 @@
-package com.pos.pioo.domain;
+package com.pos.pioo.domain.entidades;
 
 public class Categoria extends Entidade {
 

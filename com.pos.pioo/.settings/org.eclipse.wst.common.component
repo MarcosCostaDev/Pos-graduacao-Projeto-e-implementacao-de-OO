@@ -2,6 +2,10 @@
     <wb-module deploy-name="com.pos.pioo">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Domain"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Web"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Infra"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Shared"/>
         <property name="context-root" value="com.pos.pioo"/>
         <property name="java-output-path" value="/com.pos.pioo/build/classes"/>
     </wb-module>

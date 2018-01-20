@@ -2,7 +2,7 @@
   <!-- Default panel contents -->
   <div class="panel-heading">Listar de anuncios</div>
   <div class="panel-body">
-    <p>Listar de anuncios</p>
+    <p>Anuncios</p>
   </div>
 
   <!-- Table -->

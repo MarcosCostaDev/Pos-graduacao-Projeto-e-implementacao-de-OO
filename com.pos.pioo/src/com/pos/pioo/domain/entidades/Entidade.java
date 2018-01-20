@@ -23,6 +23,7 @@ public abstract class Entidade extends Validacao {
 
 	public void setId(String valor)
 	{
+		this.novoRegistro = false;
 		this.id = UUID.fromString(valor);	
 	}
 

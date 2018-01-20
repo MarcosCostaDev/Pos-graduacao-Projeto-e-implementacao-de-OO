@@ -10,6 +10,7 @@ import domain.Anunciante;
 
 public class AnuncianteRepositorio extends RepositorioBase implements repositorios.AnuncianteRepositorio {
 
+	
 	@Override
 	public void inserir(Anunciante objeto) throws SQLException {
 		try {  
@@ -114,7 +115,7 @@ public class AnuncianteRepositorio extends RepositorioBase implements repositori
 	}
 
 	@Override
-	public List<Anunciante> listarConsulta(String dao, String filtro) throws SQLException {
+	public List<Anunciante> listarConsulta(String filtro) throws SQLException {
 
 		ArrayList<Anunciante> objetos = new ArrayList<Anunciante>();
 
@@ -165,7 +166,7 @@ public class AnuncianteRepositorio extends RepositorioBase implements repositori
 	}
 
 	@Override
-	public Anunciante selecionarConsulta(String dao, String codigo) throws SQLException {
+	public Anunciante selecionarConsulta(String codigo) throws SQLException {
 		Anunciante objeto = null;
 
 		try {  

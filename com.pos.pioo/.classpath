@@ -27,5 +27,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/marco/eclipse-workspace/Projeto e Implementação OO/plugin/Microsoft JDBC Driver 4.0 for SQL Server/sqljdbc_6.0/ptb/jre7/sqljdbc41.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

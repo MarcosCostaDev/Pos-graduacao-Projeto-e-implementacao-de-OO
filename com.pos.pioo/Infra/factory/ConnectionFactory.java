@@ -6,8 +6,8 @@ import java.sql.SQLException;
 
 public class ConnectionFactory {
 
-	private String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";  
-    private String connectionStr = "jdbc:sqlserver://NB-MARCOSCOSTA\\SQLEXPRESS;databaseName=pioopublicidade;integratedSecurity=true;";  
+	private String driver = "com.microsoft.sqlserver";//"net.sourceforge.jtds.jdbc.Driver";//"com.microsoft.sqlserver";//"com.microsoft.sqlserver.jdbc.SQLServerDriver";  
+    private String connectionStr = "jdbc:jtds:sqlserver://NB-MARCOSCOSTA\\SQLEXPRESS;databaseName=pioopublicidade;integratedSecurity=true";  
       
     private static ConnectionFactory connectionFactory = null;  
 

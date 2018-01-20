@@ -4,10 +4,6 @@ public class Categoria extends Entidade {
 
 	private String nome;
 	
-	protected Categoria()
-	{
-		super();
-	}
 	
 	public Categoria(String nome)
 	{

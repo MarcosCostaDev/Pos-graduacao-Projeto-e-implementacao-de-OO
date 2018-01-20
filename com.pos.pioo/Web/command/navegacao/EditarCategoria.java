@@ -15,6 +15,7 @@ public class EditarCategoria implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		try {
 
+			request.setAttribute("teste", "teste13232");
 			RequestDispatcher d = request.getRequestDispatcher("/Categoria/EditarCategoria.jsp");
 			d.forward(request,response);
 

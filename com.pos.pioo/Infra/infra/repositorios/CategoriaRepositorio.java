@@ -107,7 +107,7 @@ public class CategoriaRepositorio extends RepositorioBase implements repositorio
 	}
 
 	@Override
-	public List<Categoria> listarConsulta(String dao, String filtro) throws SQLException {
+	public List<Categoria> listarConsulta(String filtro) throws SQLException {
 		ArrayList<Categoria> objetos = new ArrayList<Categoria>();
 
 		try {  
@@ -156,7 +156,7 @@ public class CategoriaRepositorio extends RepositorioBase implements repositorio
 	}
 
 	@Override
-	public Categoria selecionarConsulta(String dao, String codigo) throws SQLException {
+	public Categoria selecionarConsulta(String codigo) throws SQLException {
 		Categoria objeto = null;
 
 		try {  

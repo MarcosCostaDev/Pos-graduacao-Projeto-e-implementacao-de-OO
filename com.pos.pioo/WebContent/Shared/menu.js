@@ -8,13 +8,13 @@ $(document).ready(function(){
 	});
 	
 	$(".com-pos-pioo-menu-categorias").on("click", function(){
-		navegarPrincipal("/com.pos.pioo/NavegacaoController?partial=ListarCategoria");
+		navegarPrincipal("/com.pos.pioo/NavegacaoController?command=ListarCategoria");
 	});
 	$(".com-pos-pioo-menu-anunciantes").on("click", function(){ 
-		navegarPrincipal("/com.pos.pioo/NavegacaoController?partial=ListarAnunciante"); 
+		navegarPrincipal("/com.pos.pioo/NavegacaoController?command=ListarAnunciante"); 
 	});
 	$(".com-pos-pioo-menu-anuncios").on("click",  function(){ 
-		navegarPrincipal("/com.pos.pioo/NavegacaoController?partial=ListarAnuncio");
+		navegarPrincipal("/com.pos.pioo/NavegacaoController?command=ListarAnuncio");
 	});
 });
 

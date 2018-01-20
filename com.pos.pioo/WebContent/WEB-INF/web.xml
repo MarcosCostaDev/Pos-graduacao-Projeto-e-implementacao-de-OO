@@ -6,7 +6,7 @@
   </welcome-file-list>
   <servlet>
     <servlet-name>com.pos.pioo</servlet-name>
-    <servlet-class>com.pos.pioo.web.servlet.NavegacaoController</servlet-class>
+    <servlet-class>servlet.Controller</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>com.pos.pioo</servlet-name>

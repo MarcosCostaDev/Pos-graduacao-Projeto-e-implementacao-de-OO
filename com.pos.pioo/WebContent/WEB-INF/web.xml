@@ -9,12 +9,12 @@
    
    <servlet>
      <servlet-name>com.pos.pioo</servlet-name>
-     <servlet-class>com.pos.pioo.servlet.Controller</servlet-class>
+     <servlet-class>com.pos.pioo.web.servlet.NavegacaoController</servlet-class>
    </servlet>
   
    <servlet-mapping>
      <servlet-name>com.pos.pioo</servlet-name>
-     <url-pattern>/Controller</url-pattern>
+     <url-pattern>/NavegacaoController</url-pattern>
    </servlet-mapping>
    
  </web-app>

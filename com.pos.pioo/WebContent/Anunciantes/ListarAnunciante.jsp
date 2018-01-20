@@ -1,8 +1,8 @@
 <div class="panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading">Lista de categorias</div>
+  <div class="panel-heading">Lista de anunciante</div>
   <div class="panel-body">
-    <p>Categoria</p>
+    <p>Anunciante</p>
   </div>
 
   <!-- Table -->
@@ -16,4 +16,4 @@
 	</table>
 </div>
 
-<script src="${pageContext.request.contextPath}/Categoria/ListarCategoria.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/Anunciantes/ListarAnunciante.js" type="text/javascript"></script>

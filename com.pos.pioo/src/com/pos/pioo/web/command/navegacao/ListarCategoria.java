@@ -1,4 +1,4 @@
-package com.pos.pioo.web.command;
+package com.pos.pioo.web.command.navegacao;
 
 import java.io.IOException;
 
@@ -7,7 +7,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ListarCategoria implements Command {
+import com.pos.pioo.web.command.NavegacaoCommand;
+
+public class ListarCategoria implements NavegacaoCommand {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {

@@ -7,17 +7,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.pos.pioo.web.command.Command;
+import com.pos.pioo.web.command.NavegacaoCommand;
 
-public class Controller extends HttpServlet {
+public class NavegacaoController extends HttpServlet {
 
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		//Executa o Comando conforme a URL
-		Command comando = null;
+	
+		NavegacaoCommand comando = null;
 
 		try {
-			comando = (Command)Class.forName("com.pos.pioo.web.command."+request.getParameter("command")).newInstance();
+			comando = (NavegacaoCommand)Class.forName("com.pos.pioo.web.command.navegacao."+request.getParameter("partial")).newInstance();
 		} catch (InstantiationException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
@@ -25,9 +24,7 @@ public class Controller extends HttpServlet {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-
 		comando.execute(request, response);
-
 	}
 
 	@Override

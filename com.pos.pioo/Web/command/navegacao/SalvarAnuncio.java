@@ -31,27 +31,28 @@ public class SalvarAnuncio implements Command {
 			boolean isNovo = true;
 			Categoria categoria = new Categoria("");			
 			Anunciante anunciante = new Anunciante("", "", "", "", "");
-			categoria.setId(request.getParameter("categoriaId"));
+			categoria.setId(request.getParameter("categoriaId").toString());
+			anunciante.setId(request.getParameter("anuncianteId").toString());
+
+			Anuncio anuncio = new Anuncio(categoria, anunciante, new Date());
 
 
-			Anuncio anuncio = new Anuncio(categoria, anunciante, new Date(request.getParameter("validade")));
-
-			if(request.getParameter("id") == "")
+			if(!request.getParameter("isnew").equals("true"))
 			{
-				anunciante.setId(request.getParameter("id"));
+				anuncio.setId(request.getParameter("id"));
+				isNovo = false;
 			}
 
-			if(anunciante.EValido())
+
+			if(isNovo)
 			{
-				if(isNovo)
-				{
-					this.anuncioRepositorio.inserir(anuncio);
-				}
-				else
-				{
-					this.anuncioRepositorio.alterar(anuncio);
-				}
+				this.anuncioRepositorio.inserir(anuncio);
 			}
+			else
+			{
+				this.anuncioRepositorio.alterar(anuncio);
+			}
+
 
 			RequestDispatcher d = request.getRequestDispatcher("Controller?command=ListarAnuncio");
 			d.forward(request,response);

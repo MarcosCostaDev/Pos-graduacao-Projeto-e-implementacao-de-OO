@@ -12,15 +12,17 @@
 
 <form id="AnuncioFormulario">
 	<input type="hidden" name="id" value="<%=anuncio.getId()%>">
+	<input
+		type="hidden" name="isnew" value="<%=anuncio.isNovoRegistro()%>" />
 	<div class="form-group">
 
 		<label class="control-label required">Categoria <abbr
 			title="required">*</abbr>
-		</label> <select name="CategoriaId" require>
+		</label> <select name="categoriaId" require>
 			<%
 				for (Categoria item : categorias) {
 			%>
-			<option value="'<%=item.getId()%>'"
+			<option value="<%=item.getId()%>"
 				<%=!anuncio.isNovoRegistro() && anuncio.getCategoria().getId() == item.getId() ? "selected" : ""%>><%=item.getNome()%></option>
 			<%
 				}
@@ -30,11 +32,11 @@
 	<div class="form-group">
 		<label class="control-label required">Anunciante <abbr
 			title="required">*</abbr>
-		</label> <select name="AnuncianteId" require>
+		</label> <select name="anuncianteId" require>
 			<%
 				for (Anunciante item : anunciantes) {
 			%>
-			<option value="'<%=item.getId()%>'"
+			<option value="<%=item.getId()%>"
 				<%=!anuncio.isNovoRegistro() && anuncio.getAnunciante().getId() == item.getId() ? "selected" : ""%>><%=item.getNome()%></option>
 			<%
 				}
@@ -44,7 +46,7 @@
 	<div class="form-group">
 		<label class="control-label required">Validade <abbr
 			title="required">*</abbr>
-		</label> <input type="text" class="form-control" name="nome"
+		</label> <input type="text" class="form-control" name="dataValidade"
 			value="<%=anuncio.getDataValidade().toString() %>" required />
 	</div>
 	<button class="btn btn-primary" type="button"
@@ -54,5 +56,5 @@
 </form>
 
 <script type="text/javascript">
-	<jsp:include page="/Anunciantes/EditarAnunciante.js" />
+	<jsp:include page="/Anuncios/EditarAnuncio.js" />
 </script>

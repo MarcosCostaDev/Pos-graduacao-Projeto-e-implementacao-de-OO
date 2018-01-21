@@ -16,16 +16,16 @@ public class AnuncioRepositorio extends RepositorioBase implements repositorios.
 	@Override
 	public void inserir(Anuncio objeto) throws SQLException {
 		try {
-			String query = "insert into anuncio(guid, guidanunciante, guidcategoria, datavalidade, datacriacao) values (?, ?, ?, ?)" ;
+			java.text.SimpleDateFormat sdf = 
+				     new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			String query = "insert into anuncio(guid, guidanunciante, guidcategoria, datavalidade) values (?, ?, ?, ?)" ;
 
 			con = getConnection();  
 			ps = con.prepareStatement(query);  
 			ps.setString(1, objeto.getId());
 			ps.setString(2, objeto.getAnunciante().getId());
 			ps.setString(3, objeto.getCategoria().getId());
-			ps.setDate(4, (Date)objeto.getDataValidade());
-			ps.setDate(5, (Date) objeto.getDataCriacao());
-
+			ps.setString(4, sdf.format(objeto.getDataValidade()));
 			ps.executeUpdate();  
 
 		} catch (SQLException e) {  
@@ -118,7 +118,7 @@ public class AnuncioRepositorio extends RepositorioBase implements repositorios.
 
 		try {  
 
-			String query = "SELECT ANUNCIO.GUID, ANUNCIO.GUIDANUNCIANTE, ANUNCIO.GUIDCATEGORIA, ANUNCIO.DATAVALIDADE, ANUNCIO.DATACRIACAO, ANUNCIANTE.NOME AS ANUNCIANTENOME, ANUNCIANTE.DOCUMENTO, ANUNCIANTE.ENDERECO, ANUNCIANTE.TELEFONE, " + 
+			String query = "SELECT ANUNCIO.GUID, ANUNCIO.GUIDANUNCIANTE, ANUNCIO.GUIDCATEGORIA, ANUNCIO.DATAVALIDADE, ANUNCIO.DATACRIACAO, ANUNCIANTE.NOME AS ANUNCIANTENOME, ANUNCIANTE.DOCUMENTO, ANUNCIANTE.ENDERECO, ANUNCIANTE.CIDADE, ANUNCIANTE.TELEFONE, " + 
 					"                  CATEGORIA.NOME AS CATEGORIANOME " + 
 					" FROM     ANUNCIO INNER JOIN" + 
 					"                  ANUNCIANTE ON ANUNCIANTE.GUID = ANUNCIO.GUIDANUNCIANTE INNER JOIN" + 

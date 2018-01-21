@@ -27,7 +27,7 @@ public class EditarCategoria implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			Categoria categoria = null;
-			if(request.getParameter("id") != "") {
+			if(request.getParameter("id") != null) {
 				categoria = this.categoriaRepositorio.selecionarConsulta(request.getParameter("id"));
 			}
 			else

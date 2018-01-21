@@ -1,4 +1,4 @@
-function navegarPrincipal(url){
+function executarCommand(url){
 	$("#com-pos-pioo-div-principal").load(url);
 }
 
@@ -8,13 +8,13 @@ $(document).ready(function(){
 	});
 	
 	$(".com-pos-pioo-menu-categorias").on("click", function(){
-		navegarPrincipal("/com.pos.pioo/Controller?command=ListarCategoria");
+		executarCommand("/com.pos.pioo/Controller?command=ListarCategoria");
 	});
 	$(".com-pos-pioo-menu-anunciantes").on("click", function(){ 
-		navegarPrincipal("/com.pos.pioo/Controller?command=ListarAnunciante"); 
+		executarCommand("/com.pos.pioo/Controller?command=ListarAnunciante"); 
 	});
 	$(".com-pos-pioo-menu-anuncios").on("click",  function(){ 
-		navegarPrincipal("/com.pos.pioo/Controller?command=ListarAnuncio");
+		executarCommand("/com.pos.pioo/Controller?command=ListarAnuncio");
 	});
 });
 

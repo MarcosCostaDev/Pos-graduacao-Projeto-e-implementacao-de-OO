@@ -36,7 +36,7 @@ public class DeletarAnuncio  implements Command {
 			
 			this.anuncioRepositorio.excluir(anuncio);
 		
-			RequestDispatcher d = request.getRequestDispatcher("/Anunciantes/ListarAnuncio.jsp");
+			RequestDispatcher d = request.getRequestDispatcher("Controller?command=ListarAnuncio");
 			d.forward(request,response);
 
 		} catch (IOException | ServletException | SQLException e) {

@@ -15,7 +15,7 @@ public class AnuncianteRepositorio extends RepositorioBase implements repositori
 	public void inserir(Anunciante objeto) throws SQLException {
 		try {  
 
-			String query = "insert into anunciante(guid, nome, documento, endereco, cidade, telefone, datacriacao) values (?, ?, ?, ?, ?, ?, ?)" ;
+			String query = "insert into anunciante(guid, nome, documento, endereco, cidade, telefone) values (?, ?, ?, ?, ?, ?)" ;
 
 			con = getConnection();  
 			ps = con.prepareStatement(query);  
@@ -25,10 +25,10 @@ public class AnuncianteRepositorio extends RepositorioBase implements repositori
 			ps.setString(4, objeto.getEndereco());
 			ps.setString(5, objeto.getCidade());
 			ps.setString(6, objeto.getTelefone());
-			ps.setDate(7, (Date) objeto.getDataCriacao());
 			ps.executeUpdate();  
 		} catch (SQLException e) {  
-			System.out.println("Erro ao inserir anunciante");  
+			System.out.println("Erro ao inserir anunciante");
+			objeto.adicionarMensagem("Erro ao inserir anunciante");
 			System.out.println(e.toString());  
 		}finally{ 
 			try{ 
@@ -65,6 +65,7 @@ public class AnuncianteRepositorio extends RepositorioBase implements repositori
 			ps.executeUpdate();  
 		} catch (SQLException e) {  
 			System.out.println("Erro ao alterar anunciante");  
+			objeto.adicionarMensagem("Erro ao alterar anunciante");
 			System.out.println(e.toString());  
 		}finally{ 
 			try{ 
@@ -95,7 +96,8 @@ public class AnuncianteRepositorio extends RepositorioBase implements repositori
 			ps.setString(1, objeto.getId());
 			ps.executeUpdate();  
 		} catch (SQLException e) {  
-			System.out.println("Erro ao excluir anunciante");  
+			System.out.println("Erro ao excluir anunciante");
+			objeto.adicionarMensagem("Erro ao excluir anunciante");
 			System.out.println(e.toString());  
 		}finally{ 
 			try{ 

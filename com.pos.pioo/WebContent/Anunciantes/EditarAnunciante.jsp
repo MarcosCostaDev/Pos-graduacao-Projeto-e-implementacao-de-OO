@@ -6,8 +6,10 @@
 	Anunciante anunciante = (Anunciante) request.getAttribute("anunciante");
 %>
 
-<form
-	action="${pageContext.request.contextPath}/Controller=SalvarCategoria">
+<form id="AnuncianteFormulario">
+
+	<input type="hidden" name="id" value="<%=anunciante.getId()%>" />
+	<input type="hidden" name="isnew" value="<%=anunciante.isNovoRegistro()%>" />
 	<div class="form-group">
 		<label class="control-label required">Nome <abbr
 			title="required">*</abbr>
@@ -21,23 +23,30 @@
 		</label> <input type="text" class="form-control" name="documento"
 			value="<%=anunciante.getDocumento()%>" required />
 	</div>
-	
+
 	<div class="form-group">
 		<label class="control-label required">Endereço <abbr
 			title="required">*</abbr>
 		</label> <input type="text" class="form-control" name="endereco"
 			value="<%=anunciante.getEndereco()%>" required />
 	</div>
-	
+
 	<div class="form-group">
 		<label class="control-label required">Telefone <abbr
 			title="required">*</abbr>
 		</label> <input type="text" class="form-control" name="telefone"
 			value="<%=anunciante.getTelefone()%>" required />
-	</div>	
-	
+	</div>
 
-	<button class="btn btn-primary" type="submit">Salvar</button>
+<div class="form-group">
+		<label class="control-label required">Cidade <abbr
+			title="required">*</abbr>
+		</label> <input type="text" class="form-control" name="cidade"
+			value="<%=anunciante.getCidade()%>" required />
+	</div>
+
+	<button class="btn btn-primary" type="button"
+		onclick="onSalvarAnunciante()">Salvar</button>
 	<button class="btn btn-primary" type="button"
 		onclick="onVoltarAnunciante()">Voltar</button>
 

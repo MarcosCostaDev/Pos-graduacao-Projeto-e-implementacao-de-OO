@@ -31,17 +31,18 @@ public class ListarCategoria implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		try {
 
-
+			List<Categoria> categorias = this.categoriaRepositorio.listarConsulta("");
+/*
 			List<Categoria> categorias = new ArrayList<Categoria>();
 			categorias.add(new Categoria("Teste"));
 			categorias.add(new Categoria("Teste2"));
-			categorias.add(new Categoria("Teste3"));	
+			categorias.add(new Categoria("Teste3"));	*/
 			request.setAttribute("categorias", categorias);
 
 			RequestDispatcher d = request.getRequestDispatcher("/Categoria/ListarCategoria.jsp");
 			d.forward(request,response);
 
-		} catch (IOException | ServletException e) {
+		} catch (IOException | ServletException | SQLException e) {
 			e.printStackTrace();
 		}
 

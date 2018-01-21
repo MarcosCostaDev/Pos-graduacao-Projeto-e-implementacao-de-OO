@@ -1,3 +1,9 @@
 function onVoltarCategoria(){
-	navegarPrincipal("/com.pos.pioo/Controller?command=ListarCategoria");
+	executarCommand("/com.pos.pioo/Controller?command=ListarCategoria");
+}
+
+function onSalvarCategoria(){
+	var valores = $('#CategoriaFormulario').serialize();
+	var command = "/com.pos.pioo/Controller?command=SalvarCategoria&" + valores;
+	executarCommand(command);
 }

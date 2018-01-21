@@ -53,7 +53,7 @@ public class SalvarAnuncio implements Command {
 				}
 			}
 
-			RequestDispatcher d = request.getRequestDispatcher("/Categoria/ListarAnunciante.jsp");
+			RequestDispatcher d = request.getRequestDispatcher("Controller?command=ListarAnuncio");
 			d.forward(request,response);
 
 		} catch (IOException | ServletException | SQLException e) {

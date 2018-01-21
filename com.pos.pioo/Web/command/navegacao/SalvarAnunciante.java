@@ -28,11 +28,12 @@ public class SalvarAnunciante implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			boolean isNovo = true;
-			Anunciante anunciante = new Anunciante(request.getParameter("name"), request.getParameter("documento"), request.getParameter("endereco"), request.getParameter("cidade"), request.getParameter("telefone"));
+			Anunciante anunciante = new Anunciante(request.getParameter("nome"), request.getParameter("documento"), request.getParameter("endereco"), request.getParameter("cidade"), request.getParameter("telefone"));
 
-			if(request.getParameter("id") == "")
+			if(!request.getParameter("isnew").equals("true"))
 			{
 				anunciante.setId(request.getParameter("id"));
+				isNovo = false;
 			}
 
 			if(anunciante.EValido())
@@ -47,7 +48,7 @@ public class SalvarAnunciante implements Command {
 				}
 			}
 
-			RequestDispatcher d = request.getRequestDispatcher("/Categoria/ListarAnunciante.jsp");
+			RequestDispatcher d = request.getRequestDispatcher("Controller?command=ListarAnunciante");
 			d.forward(request,response);
 
 		} catch (IOException | ServletException | SQLException e) {

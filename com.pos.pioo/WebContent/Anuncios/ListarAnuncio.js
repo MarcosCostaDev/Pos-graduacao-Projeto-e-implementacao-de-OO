@@ -2,11 +2,11 @@ function onEditarAnuncio(id)
 {
 	if(id)
 	{
-		navegarPrincipal("/com.pos.pioo/Controller?command=EditarAnuncio&id=" + id);
+		executarCommand("/com.pos.pioo/Controller?command=EditarAnuncio&id=" + id);
 	}
 	else
 	{
-		navegarPrincipal("/com.pos.pioo/Controller?command=EditarAnuncio");
+		executarCommand("/com.pos.pioo/Controller?command=EditarAnuncio");
 	}
 }
 
@@ -14,6 +14,6 @@ function onEditarAnuncio(id)
 function onDeletarAnuncio(id){
 	if(confirm("Deseja deletar o anuncio?"))
 	{
-		navegarPrincipal("/com.pos.pioo/Controller?command=DeletarAnuncio&id=" + id);
+		executarCommand("/com.pos.pioo/Controller?command=DeletarAnuncio&id=" + id);
 	}
 }

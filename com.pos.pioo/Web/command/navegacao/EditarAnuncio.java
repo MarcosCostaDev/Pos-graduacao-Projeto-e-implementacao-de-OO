@@ -1,7 +1,9 @@
 package command.navegacao;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -11,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import command.Command;
 import domain.Anunciante;
+import domain.Anuncio;
 import domain.Categoria;
 import repositorios.AnuncianteRepositorio;
 import repositorios.AnuncioRepositorio;
@@ -42,31 +45,27 @@ public class EditarAnuncio implements Command {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		try {
+			Anuncio anuncio = null;
 			
-			/*
+			if(request.getAttribute("id") != null)
+			{
+				anuncio = this.anuncioRepositorio.selecionarConsulta(request.getAttribute("id").toString());
+			}
+			else
+			{
+				anuncio = new Anuncio(new Categoria(""), new Anunciante("", "", "", "", ""), new Date());
+			}
 			List<Categoria> categorias = this.categoriaRepositorio.listarConsulta("");
 			List<Anunciante> anunciantes = this.anuncianteRepositorio.listarConsulta("");
-			*/
-			
-			List<Categoria> categorias = new ArrayList<Categoria>();
-			List<Anunciante> anunciantes = new ArrayList<Anunciante>();
-			
-			anunciantes.add(new Anunciante("Nome1", "123456789", "teste rua 21", "cidade1", "588785662"));
-			anunciantes.add(new Anunciante("Nome2", "123456789", "teste rua 21", "cidade2", "588785662"));
-			anunciantes.add(new Anunciante("Nome3", "123456789", "teste rua 21", "cidade3", "588785662"));	
-			
-			categorias.add(new Categoria("Teste"));
-			categorias.add(new Categoria("Teste2"));
-			categorias.add(new Categoria("Teste3"));	
 			
 			request.setAttribute("categorias", categorias);
 			request.setAttribute("anunciantes", anunciantes);
-			request.setAttribute("validade", "");
+			request.setAttribute("anuncio", anuncio);
 
 			RequestDispatcher d = request.getRequestDispatcher("/Anuncios/EditarAnuncio.jsp");
 			d.forward(request,response);
 
-		} catch (IOException | ServletException e) {
+		} catch (IOException | ServletException | SQLException e) {
 			e.printStackTrace();
 		}
 	}

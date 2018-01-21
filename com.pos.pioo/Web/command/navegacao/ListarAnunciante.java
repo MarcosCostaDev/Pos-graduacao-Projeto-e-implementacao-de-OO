@@ -30,15 +30,13 @@ public class ListarAnunciante  implements Command {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		try {
-			List<Anunciante> anunciantes = new ArrayList<Anunciante>();
-			anunciantes.add(new Anunciante("Nome1", "123456789", "teste rua 21", "cidade1", "588785662"));
-			anunciantes.add(new Anunciante("Nome2", "123456789", "teste rua 21", "cidade2", "588785662"));
-			anunciantes.add(new Anunciante("Nome3", "123456789", "teste rua 21", "cidade3", "588785662"));	
+			List<Anunciante> anunciantes = this.anuncianteRepositorio.listarConsulta("");
+		
 			request.setAttribute("anunciantes", anunciantes);
 			RequestDispatcher d = request.getRequestDispatcher("/Anunciantes/ListarAnunciante.jsp");
 			d.forward(request,response);
 
-		} catch (IOException | ServletException e) {
+		} catch (IOException | ServletException | SQLException e) {
 			e.printStackTrace();
 		}
 	}

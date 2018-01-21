@@ -6,33 +6,35 @@ import java.sql.SQLException;
 
 public class ConnectionFactory {
 
-	private String driver = "com.microsoft.sqlserver";//"net.sourceforge.jtds.jdbc.Driver";//"com.microsoft.sqlserver";//"com.microsoft.sqlserver.jdbc.SQLServerDriver";  
-    private String connectionStr = "jdbc:jtds:sqlserver://NB-MARCOSCOSTA\\SQLEXPRESS;databaseName=pioopublicidade;integratedSecurity=true";  
-      
-    private static ConnectionFactory connectionFactory = null;  
+	private String driver = "com.mysql.jdbc.Driver";//"com.microsoft.sqlserver";//"net.sourceforge.jtds.jdbc.Driver";//"com.microsoft.sqlserver";//"com.microsoft.sqlserver.jdbc.SQLServerDriver";  
+	private String connectionStr = "jdbc:mysql://localhost:3306/pioopublicidade";  
+	private String username = "aplicacao";
+	private String password = "123456";
+	
+	private static ConnectionFactory connectionFactory = null;  
 
-    private ConnectionFactory(){  
-        try{  
-            Class.forName(driver);  
-        }catch(ClassNotFoundException e){  
-            e.printStackTrace();  
-        }  
-    }  
+	private ConnectionFactory(){  
+		try{  
+			Class.forName(driver);  
+		}catch(ClassNotFoundException e){  
+			e.printStackTrace();  
+		}  
+	}  
 
-    public Connection getConnection() throws SQLException{  
-        Connection conn = null;  
-        try{  
-        conn = DriverManager.getConnection(connectionStr);  
-        }catch(SQLException e){  
-            e.printStackTrace();  
-        }  
-        return conn;  
-    }  
-      
-    public static ConnectionFactory getInstance(){  
-        if(connectionFactory == null)  
-            connectionFactory = new ConnectionFactory();  
+	public Connection getConnection() throws SQLException{  
+		Connection conn = null;  
+		try{  
+			conn = DriverManager.getConnection(connectionStr, username, password);  
+		}catch(SQLException e){  
+			e.printStackTrace();  
+		}  
+		return conn;  
+	}  
 
-        return connectionFactory;  
-    }  
+	public static ConnectionFactory getInstance(){  
+		if(connectionFactory == null)  
+			connectionFactory = new ConnectionFactory();  
+
+		return connectionFactory;  
+	}  
 }

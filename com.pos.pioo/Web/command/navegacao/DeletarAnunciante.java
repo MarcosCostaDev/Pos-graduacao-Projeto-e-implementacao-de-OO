@@ -27,13 +27,15 @@ public class DeletarAnunciante  implements Command {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		try {
+			
+			
 			Anunciante anunciante = new Anunciante("","","","","");
 			
 			anunciante.setId(request.getParameter("id"));
 			
 			this.anuncianteRepositorio.excluir(anunciante);
 			
-			RequestDispatcher d = request.getRequestDispatcher("/Anunciantes/ListarAnunciante.jsp");
+			RequestDispatcher d = request.getRequestDispatcher("Controller?command=ListarAnunciante");
 			d.forward(request,response);
 
 		} catch (IOException | ServletException | SQLException e) {

@@ -32,7 +32,7 @@ public class DeletarCategoria   implements Command {
 			
 			this.categoriaRepositorio.excluir(categoria);
 			
-			RequestDispatcher d = request.getRequestDispatcher("/Anunciantes/ListarCategoria.jsp");
+			RequestDispatcher d = request.getRequestDispatcher("Controller?command=ListarCategoria");
 			d.forward(request,response);
 
 		} catch (IOException | ServletException | SQLException e) {

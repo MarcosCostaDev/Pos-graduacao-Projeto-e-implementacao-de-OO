@@ -12,8 +12,9 @@ public abstract class Entidade extends Validacao {
 	private boolean novoRegistro;
 	public Entidade() {
 		super();
-		this.novoRegistro = true;
 		this.setId(UUID.randomUUID());
+		this.novoRegistro = true;
+		
 	}
 
 	private void setId(UUID valor) {

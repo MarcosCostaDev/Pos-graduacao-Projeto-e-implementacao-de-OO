@@ -28,11 +28,12 @@ public class SalvarCategoria  implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			boolean isNovo = true;
-			Categoria categoria = new Categoria(request.getParameter("name"));
+			Categoria categoria = new Categoria(request.getParameter("nome"));
 
-			if(request.getParameter("id") == "")
+			if(request.getParameter("isnew") != "true")
 			{
 				categoria.setId(request.getParameter("id"));
+				isNovo = false;
 			}
 
 			if(categoria.EValido())
@@ -47,7 +48,7 @@ public class SalvarCategoria  implements Command {
 				}
 			}
 
-			RequestDispatcher d = request.getRequestDispatcher("/Categoria/EditarCategoria.jsp");
+			RequestDispatcher d = request.getRequestDispatcher("Controller?command=ListarCategoria");
 			d.forward(request,response);
 
 		} catch (IOException | ServletException | SQLException e) {

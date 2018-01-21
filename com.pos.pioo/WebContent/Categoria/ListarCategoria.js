@@ -5,19 +5,19 @@ function onEditarCategoria(id)
 {
 	if(id)
 	{
-		navegarPrincipal("/com.pos.pioo/Controller?command=EditarCategoria&id=" + id);
+		executarCommand("/com.pos.pioo/Controller?command=EditarCategoria&id=" + id);
 	}
 	else
 	{
-		navegarPrincipal("/com.pos.pioo/Controller?command=EditarCategoria");
+		executarCommand("/com.pos.pioo/Controller?command=EditarCategoria");
 	}
 }
 
 
 
-function onDeletarCategoria(id){
+function onExluirCategoria(id){
 	if(confirm("Deseja deletar o categoria?"))
 	{
-		navegarPrincipal("/com.pos.pioo/Controller?command=DeletarCategoria&id=" + id);
+		executarCommand("/com.pos.pioo/Controller?command=DeletarCategoria&id=" + id);
 	}
 }

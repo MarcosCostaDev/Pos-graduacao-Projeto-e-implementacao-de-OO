@@ -10,50 +10,53 @@
 	List<Anunciante> anunciantes = (ArrayList<Anunciante>) request.getAttribute("anunciantes");
 %>
 
-<form id="AnuncioFormulario">
-	<input type="hidden" name="id" value="<%=anuncio.getId()%>">
-	<input
-		type="hidden" name="isnew" value="<%=anuncio.isNovoRegistro()%>" />
-	<div class="form-group">
+<div class="panel panel-default">
+	<!-- Default panel contents -->
+	<div class="panel-heading">Cadatrar Anuncio</div>
+	<form id="AnuncioFormulario">
+		<input type="hidden" name="id" value="<%=anuncio.getId()%>"> <input
+			type="hidden" name="isnew" value="<%=anuncio.isNovoRegistro()%>" />
+		<div class="form-group">
 
-		<label class="control-label required">Categoria <abbr
-			title="required">*</abbr>
-		</label> <select name="categoriaId" require>
-			<%
-				for (Categoria item : categorias) {
-			%>
-			<option value="<%=item.getId()%>"
-				<%=!anuncio.isNovoRegistro() && anuncio.getCategoria().getId() == item.getId() ? "selected" : ""%>><%=item.getNome()%></option>
-			<%
-				}
-			%>
-		</select>
-	</div>
-	<div class="form-group">
-		<label class="control-label required">Anunciante <abbr
-			title="required">*</abbr>
-		</label> <select name="anuncianteId" require>
-			<%
-				for (Anunciante item : anunciantes) {
-			%>
-			<option value="<%=item.getId()%>"
-				<%=!anuncio.isNovoRegistro() && anuncio.getAnunciante().getId() == item.getId() ? "selected" : ""%>><%=item.getNome()%></option>
-			<%
-				}
-			%>
-		</select>
-	</div>
-	<div class="form-group">
-		<label class="control-label required">Validade <abbr
-			title="required">*</abbr>
-		</label> <input type="text" class="form-control" name="dataValidade"
-			value="<%=anuncio.getDataValidade().toString() %>" required />
-	</div>
-	<button class="btn btn-primary" type="button"
-		onclick="onSalvarAnuncio()">Salvar</button>
-	<button class="btn btn-primary" type="button"
-		onclick="onVoltarAnuncio()">Voltar</button>
-</form>
+			<label class="control-label required">Categoria <abbr
+				title="required">*</abbr>
+			</label> <select name="categoriaId" require>
+				<%
+					for (Categoria item : categorias) {
+				%>
+				<option value="<%=item.getId()%>"
+					<%=!anuncio.isNovoRegistro() && anuncio.getCategoria().getId() == item.getId() ? "selected" : ""%>><%=item.getNome()%></option>
+				<%
+					}
+				%>
+			</select>
+		</div>
+		<div class="form-group">
+			<label class="control-label required">Anunciante <abbr
+				title="required">*</abbr>
+			</label> <select name="anuncianteId" require>
+				<%
+					for (Anunciante item : anunciantes) {
+				%>
+				<option value="<%=item.getId()%>"
+					<%=!anuncio.isNovoRegistro() && anuncio.getAnunciante().getId() == item.getId() ? "selected" : ""%>><%=item.getNome()%></option>
+				<%
+					}
+				%>
+			</select>
+		</div>
+		<div class="form-group">
+			<label class="control-label required">Validade <abbr
+				title="required">*</abbr>
+			</label> <input type="text" class="form-control" name="dataValidade"
+				value="<%=anuncio.getDataValidade().toString()%>" required />
+		</div>
+		<button class="btn btn-primary" type="button"
+			onclick="onSalvarAnuncio()">Salvar</button>
+		<button class="btn btn-primary" type="button"
+			onclick="onVoltarAnuncio()">Voltar</button>
+	</form>
+</div>
 
 <script type="text/javascript">
 	<jsp:include page="/Anuncios/EditarAnuncio.js" />

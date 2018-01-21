@@ -2,7 +2,7 @@ package domain;
 
 import java.util.UUID;
 
-import com.pos.pioo.fluentvalidation.Validacao;
+import fluent.Validacao;
 
 public abstract class Entidade extends Validacao {
 

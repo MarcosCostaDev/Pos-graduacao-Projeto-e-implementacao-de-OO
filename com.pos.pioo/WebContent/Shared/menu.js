@@ -2,11 +2,23 @@ function executarCommand(url){
 	$("#com-pos-pioo-div-principal").load(url);
 }
 
+function executarCommandBody(url, dados)
+{
+	$.ajax({
+		type: "POST",
+		url: url,
+		data: dados
+	}).then(function(resultado){
+
+		$("#com-pos-pioo-div-principal").html(resultado);
+	});
+}
+
 $(document).ready(function(){
 	$(".com-pos-pioo-menu-homes").on("click",  function(){ 
 		$("#com-pos-pioo-div-principal").html("uma tela de boas vindas qualquer!");
 	});
-	
+
 	$(".com-pos-pioo-menu-categorias").on("click", function(){
 		executarCommand("/com.pos.pioo/Controller?command=ListarCategoria");
 	});
@@ -15,6 +27,10 @@ $(document).ready(function(){
 	});
 	$(".com-pos-pioo-menu-anuncios").on("click",  function(){ 
 		executarCommand("/com.pos.pioo/Controller?command=ListarAnuncio");
+	});
+
+	$(".com-pos-pioo-menu-usuarios").on("click",  function(){ 
+		executarCommand("/com.pos.pioo/Controller?command=ListarUsuario");
 	});
 });
 

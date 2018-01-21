@@ -1,4 +1,4 @@
-package com.pos.pioo.fluentvalidation;
+package fluent;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -77,6 +77,22 @@ public abstract class Validacao {
 			this.adicionarMensagem(mensagem);
 		}
 	
+	}
+	
+	public void deveSerIgual(String valor, String compare, String mensagem)
+	{
+		if(!valor.equals(compare))
+		{
+			this.adicionarMensagem(mensagem);
+		}
+	}
+	
+	public void naoDeveSerIgual(String valor, String compare, String mensagem)
+	{
+		if(valor.equals(compare))
+		{
+			this.adicionarMensagem(mensagem);
+		}
 	}
 
 	public boolean EValido()

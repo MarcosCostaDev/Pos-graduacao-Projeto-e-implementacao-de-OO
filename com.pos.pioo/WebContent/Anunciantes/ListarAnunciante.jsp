@@ -14,6 +14,8 @@
 		<tr>
 			<th></th>
 			<th>Nome</th>
+			<th>Documento</th>
+			<th>Telefone</th>
 		</tr>
 		<%
 			List<Anunciante> anunciantes = (List<Anunciante>) request.getAttribute("anunciantes");
@@ -40,6 +42,6 @@
 	</table>
 </div>
 
-<script
-	src="${pageContext.request.contextPath}/Anunciantes/ListarAnunciante.js"
-	type="text/javascript"></script>
+<script type="text/javascript">
+	<jsp:include page="/Anunciantes/ListarAnunciante.js" />
+</script>

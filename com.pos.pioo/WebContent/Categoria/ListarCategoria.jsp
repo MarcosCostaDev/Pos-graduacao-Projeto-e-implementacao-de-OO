@@ -22,13 +22,13 @@
 		<tr>
 			<td>
 				<button type="button" class="btn btn-info btn-sm"
-					onclick="onEditarCategoria(<%=item.getId()%>)">
+					onclick="onEditarCategoria('<%=item.getId()%>')">
 					<span class="fa fa-pencil"> </span>
 				</button>
 				<button type="button" class="btn btn-danger btn-sm"
-					onclick="onExluirCategoria(<%=item.getId()%>)">
+					onclick="onExluirCategoria('<%=item.getId()%>')">
 					<span class="fa fa-trash-o"></span>
-				</button> 
+				</button>
 			</td>
 			<td><%=item.getNome()%></td>
 		</tr>
@@ -38,6 +38,6 @@
 	</table>
 </div>
 
-<script
-	src="${pageContext.request.contextPath}/Categoria/ListarCategoria.js"
-	type="text/javascript"></script>
+<script type="text/javascript">
+	<jsp:include page="/Categoria/ListarCategoria.js" />
+</script>

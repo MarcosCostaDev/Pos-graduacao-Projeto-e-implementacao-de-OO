@@ -43,6 +43,6 @@
 </div>
 
 
-<script
-	src="${pageContext.request.contextPath}/Anuncios/ListarAnuncio.js"
-	type="text/javascript"></script>
+<script type="text/javascript">
+	<jsp:include page="/Anuncios/ListarAnuncio.js" />
+</script>

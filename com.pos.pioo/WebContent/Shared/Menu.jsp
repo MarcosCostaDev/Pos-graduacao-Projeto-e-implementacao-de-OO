@@ -11,6 +11,9 @@
 			</ul>
 		</div>
 	</nav>
-	<script src="${pageContext.request.contextPath}/Shared/menu.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+		<jsp:include page="/Shared/menu.js" />
+	</script>
 </div>
 

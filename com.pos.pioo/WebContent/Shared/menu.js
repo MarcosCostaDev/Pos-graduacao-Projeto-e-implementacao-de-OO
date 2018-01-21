@@ -37,7 +37,7 @@ $(document).ready(function(){
 		executarCommand("/com.pos.pioo/Controller?command=LoginUsuario");
 	});
 
-	$(".navbar-brand com-pos-pioo-menu-home").on("click", function(){
+	$(".com-pos-pioo-menu-home").on("click", function(){
 		executarCommand("/com.pos.pioo/Controller?command=MostrarAnuncio");
 	});
 

@@ -29,7 +29,7 @@
 					<span class="fa fa-pencil"></span>
 				</button>
 				<button type="button" class="btn btn-danger btn-sm"
-					onclick="onExluirAnuncio('<%=item.getId()%>')">
+					onclick="onDeletarAnuncio('<%=item.getId()%>')">
 					<span class="fa fa-trash-o"></span>
 				</button>
 			</td>

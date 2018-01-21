@@ -26,7 +26,7 @@ public class LoginUsuario implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		try {
 
-			if(request.getAttribute("login") == null && request.getAttribute("senha") == null)
+			if(request.getParameter("login") == null && request.getParameter("senha") == null)
 			{
 				request.getSession().setAttribute("usuarioLogado", null);
 				RequestDispatcher d = request.getRequestDispatcher("/Usuario/LoginUsuario.jsp");
@@ -36,7 +36,7 @@ public class LoginUsuario implements Command {
 			else
 			{
 
-				Usuario usuario = new Usuario(request.getAttribute("login").toString(), request.getAttribute("senha").toString());
+				Usuario usuario = new Usuario(request.getParameter("login").toString(), request.getParameter("senha").toString());
 
 				if(usuario.EValido())
 				{
@@ -44,7 +44,7 @@ public class LoginUsuario implements Command {
 					if(usuario != null)
 					{
 						request.getSession().setAttribute("usuarioLogado", usuario);
-						RequestDispatcher d = request.getRequestDispatcher("controller?command=ListarCategoria");
+						RequestDispatcher d = request.getRequestDispatcher("/index.jsp");
 						d.forward(request,response);
 					}
 					else

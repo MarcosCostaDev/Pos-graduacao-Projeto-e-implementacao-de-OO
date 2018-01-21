@@ -32,5 +32,17 @@ $(document).ready(function(){
 	$(".com-pos-pioo-menu-usuarios").on("click",  function(){ 
 		executarCommand("/com.pos.pioo/Controller?command=ListarUsuario");
 	});
+
+	$(".com-pos-pioo-menu-login").on("click",  function(){ 
+		executarCommand("/com.pos.pioo/Controller?command=LoginUsuario");
+	});
+
+	$(".navbar-brand com-pos-pioo-menu-home").on("click", function(){
+		executarCommand("/com.pos.pioo/Controller?command=MostrarAnuncio");
+	});
+
+	$(".com-pos-pioo-menu-logout").on("click", function(){
+		$("body").load("/com.pos.pioo/Controller?command=LogoutUsuario");
+	});
 });
 

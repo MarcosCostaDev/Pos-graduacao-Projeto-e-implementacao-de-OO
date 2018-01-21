@@ -25,13 +25,15 @@
 
 		<div id="com-pos-pioo-div-principal">
 			<%
-				if (request.getSession().getAttribute("usuarioLogado") != null) {
+				if (request.getSession().getAttribute("usuarioLogado") == null) {
 			%>
-			<jsp:include page="Shared/Principal.jsp" />
+			<script>
+				executarCommand("/com.pos.pioo/Controller?command=MostrarAnuncio");
+			</script>
 			<%
 				} else {
 			%>
-			<jsp:include page="Usuario/LoginUsuario.jsp"></jsp:include>
+			<jsp:include page="Shared/Principal.jsp" />
 			<%
 				}
 			%>

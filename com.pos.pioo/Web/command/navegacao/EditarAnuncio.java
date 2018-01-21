@@ -61,6 +61,7 @@ public class EditarAnuncio implements Command {
 			
 			request.setAttribute("categorias", categorias);
 			request.setAttribute("anunciantes", anunciantes);
+			request.setAttribute("validade", "");
 
 			RequestDispatcher d = request.getRequestDispatcher("/Anuncios/EditarAnuncio.jsp");
 			d.forward(request,response);

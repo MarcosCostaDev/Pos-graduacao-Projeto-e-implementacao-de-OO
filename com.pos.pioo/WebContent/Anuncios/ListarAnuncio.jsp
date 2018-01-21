@@ -25,16 +25,16 @@
 		<tr>
 			<td>
 				<button type="button" class="btn btn-info btn-sm"
-					onclick="onEditarAnuncio(<%=item.getId()%>)">
+					onclick="onEditarAnuncio('<%=item.getId()%>')">
 					<span class="fa fa-pencil"></span>
 				</button>
 				<button type="button" class="btn btn-danger btn-sm"
-					onclick="onExluirAnuncio(<%=item.getId()%>)">
+					onclick="onExluirAnuncio('<%=item.getId()%>')">
 					<span class="fa fa-trash-o"></span>
 				</button>
 			</td>
-			<td><%=item.getCategoria().getNome() %></td>
-			<td><%=item.getAnunciante().getNome() %></td>
+			<td><%=item.getCategoria().getNome()%></td>
+			<td><%=item.getAnunciante().getNome()%></td>
 		</tr>
 		<%
 			}

@@ -24,11 +24,11 @@
 		<tr>
 			<td>
 				<button type="button" class="btn btn-info btn-sm"
-					onclick="onEditarAnunciante(<%=item.getId()%>)">
+					onclick="onEditarAnunciante('<%=item.getId()%>')">
 					<span class="fa fa-pencil"> </span>
 				</button>
 				<button type="button" class="btn btn-danger btn-sm"
-					onclick="onExluirAnunciante(<%=item.getId()%>)">
+					onclick="onExluirAnunciante('<%=item.getId()%>')">
 					<span class="fa fa-trash-o"></span>
 				</button>
 			</td>

@@ -26,6 +26,7 @@ Um usuário logado, poderá cadastrar, excluir, editar, deletar um registro de p
  -  Command
  - DDD
  - FluentValidation
+ - Repository
 ### Frameworks usados
 - Jquery
 - Bootstrap

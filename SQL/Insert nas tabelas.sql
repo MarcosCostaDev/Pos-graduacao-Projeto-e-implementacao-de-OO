@@ -1,2 +1,0 @@
-use [pioopublicidade]
-go;
